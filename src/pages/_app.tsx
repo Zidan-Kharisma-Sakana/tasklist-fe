@@ -1,6 +1,17 @@
+import { NavigationBar } from "@/components/navigation";
+import { AuthProvider } from "@/lib/contexts/auth";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <AuthProvider>
+      <Toaster />
+      <div className="min-h-screen px-24 py-12">
+        <NavigationBar />
+        <Component {...pageProps} />
+      </div>
+    </AuthProvider>
+  );
 }
