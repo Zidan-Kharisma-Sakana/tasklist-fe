@@ -23,7 +23,7 @@ export const ResetPasswordForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<Input> = async (data) => {
     const id = toast.loading("loading...");
-    AxiosClient.post("/api/reset-password", {
+    AxiosClient.post("/reset-password", {
       ...data,
       token: router.query.token,
       email: router.query.email,

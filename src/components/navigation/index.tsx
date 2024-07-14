@@ -21,7 +21,7 @@ export const NavigationBar = () => {
   );
 };
 
-const GreetUser = (props: any) => {
+export const GreetUser = (props: any) => {
   const [open, setOpen] = useState(false);
   const { logout } = useAuth();
   return (
@@ -51,10 +51,6 @@ const GreetUser = (props: any) => {
       <div className="relative text-base text-black">
         {open && (
           <div className="absolute right-0 top-2 bg-indigo-200 rounded-lg py-2">
-            {/* <div className="flex gap-x-2 px-4 items-center p-2">
-              <img src="/icons/setting.svg" className="w-4 h-4" />
-              <Link href={"/user"}>Settings</Link>
-            </div> */}
             <div className="flex gap-x-2 px-4 items-center p-2 cursor-pointer" onClick={logout}>
               <img src="/icons/logout.svg" className="w-4 h-4" />
               <div>Logout</div>
@@ -65,3 +61,4 @@ const GreetUser = (props: any) => {
     </div>
   );
 };
+

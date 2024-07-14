@@ -38,7 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }): JSX.Element
   }, []);
 
   async function refreshUser() {
-    await AxiosClient.get("/api/user")
+    await AxiosClient.get("/user")
       .then((response) => {
         console.log(response.data.data);
         setUser(response.data.data);
@@ -53,7 +53,7 @@ export function AuthProvider({ children }: { children: ReactNode }): JSX.Element
   async function login(email: string, password: string) {
     setLoading(true);
     const id = toast.loading("loading...");
-    await AxiosClient.post("/api/login", { email, password })
+    await AxiosClient.post("/login", { email, password })
       .then((response) => {
         console.info(response.data);
         setCookie("token", response.data.access_token, { maxAge: 60 * 60 * 24 });
@@ -75,7 +75,7 @@ export function AuthProvider({ children }: { children: ReactNode }): JSX.Element
   async function signUp(name: string, email: string, password: string, password_confirmation: string) {
     setLoading(true);
     const id = toast.loading("loading...");
-    const response = await AxiosClient.post("/api/register", { name, email, password, password_confirmation }).catch(
+    const response = await AxiosClient.post("/register", { name, email, password, password_confirmation }).catch(
       (error: AxiosError) => {
         console.error(error);
         const err = (error.response?.data as any)?.errors;
@@ -100,7 +100,7 @@ export function AuthProvider({ children }: { children: ReactNode }): JSX.Element
 
   async function logout() {
     setUser(undefined);
-    await AxiosClient.post("/api/logout");
+    await AxiosClient.post("/logout");
     removeCookie("token");
     toast.success("User logged out");
   }

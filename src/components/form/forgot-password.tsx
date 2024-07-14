@@ -18,7 +18,7 @@ export const ForgotPasswordForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<Input> = async (data) => {
     const id = toast.loading("loading...");
-    AxiosClient.post("/api/forgot-password", data)
+    AxiosClient.post("/forgot-password", data)
       .then((response) => {
         console.info(response.data);
       })

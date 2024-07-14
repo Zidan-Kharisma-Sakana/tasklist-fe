@@ -9,10 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.21",
+    "@mui/material": "^5.15.21",
+    "@mui/x-date-pickers": "^7.10.0",
+    "@types/react-dnd": "^3.0.2",
     "axios": "^1.7.2",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.11",
+    "immutability-helper": "^3.1.1",
     "next": "14.2.4",
     "react": "^18",
     "react-cookie": "^7.1.4",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18",
     "react-hook-form": "^7.52.0",
     "react-hot-toast": "^2.4.1"

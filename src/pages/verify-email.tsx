@@ -11,8 +11,8 @@ export default function VerifyEmail() {
   useEffect(() => {
     async function validate() {
       console.log(router.asPath);
-      const pathname = router.asPath.split(process.env.NEXT_PUBLIC_BACKEND_API_URL!)[1];
-      await AxiosClient.get(process.env.NEXT_PUBLIC_BACKEND_API_URL + pathname)
+      const pathname = router.asPath.split('verify-email?url=')[1];
+      await AxiosClient.get(process.env.NEXT_PUBLIC_BACKEND_API_URL +'/verify-email/'+ pathname)
         .then(refreshUser)
         .then(() => {
           router.push("/");

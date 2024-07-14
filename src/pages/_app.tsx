@@ -7,8 +7,9 @@ import { Toaster } from "react-hot-toast";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
+      
       <Toaster />
-      <div className="min-h-screen px-24 py-12">
+      <div className="min-h-screen px-12 py-6 lg:px-24 lg:py-12 text-white">
         <NavigationBar />
         <Component {...pageProps} />
       </div>
